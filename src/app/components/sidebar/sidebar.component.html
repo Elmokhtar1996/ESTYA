@@ -1,0 +1,85 @@
+
+
+<div class="dropdown" >
+  <img src="assets/images/avatar/avatar.png" alt="" class="avatar">
+    <div class="dropdown-content">
+      <a (click)="logout()" *ngIf="this.authService.isLoggedIn" href="#">Logout</a>
+      <a *ngFor="let reservation of User; let i = index" [routerLink]="['/user-profile/', reservation._id]">{{ reservation.email }}</a>
+      
+    </div>
+  </div>
+<div id="app">
+  <div id="sidebar" class='active'>
+      <div class="sidebar-wrapper active">
+<div class="sidebar-header">
+  <img src="assets/images/logo.jpg" style="height:70PX ;" alt="" srcset="">
+</div>
+<div class="sidebar-menu">
+  <ul class="menu"  >
+   
+          <li class='sidebar-title'>Admin</li>
+    
+              <a href="reservation-list" class='sidebar-link'>
+                  <i data-feather="home" width="20"></i> 
+                  <span>Verification des disponibilites</span>
+              </a>
+   
+          <li class="sidebar-item ">
+            <a href="salles-list" class='sidebar-link'>
+                  <i data-feather="triangle" width="20"></i> 
+                  <span>Salles</span>
+              </a>                                            
+          </li>
+        
+
+          <li class="sidebar-item  ">
+              <a href="user-list" class='sidebar-link'>
+                  <i data-feather="briefcase" width="20"></i> 
+                  <span>Users</span>
+              </a>
+                                            
+          </li>      
+     </ul>   <ul class="menu"  >
+          <li class='sidebar-title'>Utilisateur</li>
+      
+      
+      
+          <a href="reservation-list" class='sidebar-link'>
+            <i data-feather="home" width="20"></i> 
+            <span>Verification des disponibilites</span>
+        </a>
+
+        <li class="sidebar-item ">
+          <a href="reservation-list" class='sidebar-link'>
+                <i data-feather="triangle" width="20"></i> 
+                <span>Mes reservation</span>
+            </a>                                            
+        </li>
+
+
+      <li class="sidebar-item">
+        <a href="salles-list"  class='sidebar-link'>
+                  <i data-feather="file-text" width="20"></i> 
+                  <span>Salles</span>
+              </a>
+              
+             
+              
+          </li>
+          <li class="sidebar-item">
+            <a href="contact"  class='sidebar-link'>
+                <i data-feather="file-text" width="20"></i> 
+                <span>Contact</span>
+            </a>
+            
+           
+            
+        </li>
+  </ul>
+</div>
+<button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+</div>
+  </div>
+
+  </div>
+

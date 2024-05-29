@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+      <!-- form card register -->
+      <div class="card-body" style="margin-top:80px">
+        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+     
+  
+           <div class="form-group">
+            <label for="inputName">dateheure_debut</label>
+            <input class="form-control" type="date" formControlName="dateheure_debut" />
+            <!-- error -->
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputName"> dateheure_fin</label>
+            <input class="form-control" type="date" formControlName="dateheure_fin" />
+            <!-- error -->
+          </div>
+
+
+          <div class="form-group">
+            <select formControlName="utilisateur_id" class="form-control" >
+              <option value="" disabled>Choose a user</option>
+              <option *ngFor="let user of User; let i = index " value="{{ user._id  }}">
+                {{ user.nom  }}
+              </option>
+            </select>
+            
+          </div>
+          
+          <div class="form-group">
+            <select formControlName="salle_id" class="form-control" >
+              <option value="" disabled>Choose a salle</option>
+              <option *ngFor="let salle of Salle; let i = index " value="{{ salle._id  }}">
+                {{ salle.nom_salle  }}
+              </option>
+            </select>
+            
+          </div>
+
+  
+          <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" type="submit">
+              Register
+            </button>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    <!-- form card register -->
+  </div>
+
+
+   
+
+

@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+      <!-- form card register -->
+      <div class="card-body">
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="inputName">nom</label>
+            <input class="form-control" type="text" formControlName="nom" />
+            <!-- error -->
+          </div>
+          
+
+  
+           <div class="form-group">
+            <label for="inputName">prenom</label>
+            <input class="form-control" type="text" formControlName="prenom" />
+            <!-- error -->
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputName">mot_de_pass</label>
+            <input class="form-control" type="text" formControlName="mot_de_pass" />
+            <!-- error -->
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputName">num_adresse</label>
+            <input class="form-control" type="text" formControlName="num_adresse" />
+            <!-- error -->
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputName">nom_rue</label>
+            <input class="form-control" type="text" formControlName="nom_rue" />
+            <!-- error -->
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputName">code_postale</label>
+            <input class="form-control" type="text" formControlName="code_postale" />
+            <!-- error -->
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="inputName">ville</label>
+            <input class="form-control" type="text" formControlName="ville" />
+            <!-- error -->
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="inputName">pays</label>
+            <input class="form-control" type="text" formControlName="pays" />
+            <!-- error -->
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="inputName">email</label>
+            <input class="form-control" type="text" formControlName="email" />
+            <!-- error -->
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="inputName">tel</label>
+            <input class="form-control" type="text" formControlName="tel" />
+            <!-- error -->
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="inputName">civilite</label>
+            <input class="form-control" type="text" formControlName="civilite" />
+            <!-- error -->
+          </div>
+
+             
+
+
+
+
+  
+          <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" type="submit">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- form card register -->
+  </div>
+  

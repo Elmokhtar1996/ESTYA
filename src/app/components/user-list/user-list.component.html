@@ -1,0 +1,111 @@
+
+  <!-- No data message -->
+<app-sidebar></app-sidebar>
+
+  <!-- Employee list -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard - Voler Admin Dashboard</title>
+  
+  </head>
+  <body>
+    
+   
+          <div id="main">
+              
+            <div class="row">
+              <div class="col-md-6">  
+  <div class="main-content container-fluid">
+    <input id="chercher" type="text" placeholder="Chercher.."/>
+    </div>
+              </div>
+      <section class="section">
+          
+         
+             
+             
+          
+          
+         
+          <div class="row mb-4">
+              <div class="col-md-12">
+                 
+                  <div class="">
+                
+                      <div class="card-body px-0 pb-0">
+                          <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Civilité</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Prénom</th>
+                                    <th scope="col">Adresse</th>
+                                    <th scope="col">Code postale</th>
+                                    <th scope="col">Pays</th>
+                                    <th scope="col">Email</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                    <tr *ngFor="let user of User; let i = index">
+                                        <td>{{ user.civilite }}</td>
+                                         <td>{{ user.nom }}</td>
+                                         <td>{{ user.prenom }}</td>
+                                         <td>{{ user.num_adresse }}  {{ user.nom_rue }}</td>
+                                         <td>{{ user.code_postale }}</td>
+                                         <td>{{ user.ville }}</td>
+                                         <td>{{ user.email }}</td>
+                                         
+                                         <td *ngIf="y=='admin'" class="text-center edit-block">
+                                             <span class="edit" [routerLink]="['/user-edit/', user._id]">
+                                               <button type="button" class="btn btn-outline-success">Edit</button>
+                                             </span>
+                                             <span class="delete" (click)="removeUser(user, i)">
+                                               <button type="button" class="btn btn-outline-danger">Delete</button>
+                                             </span>
+                                           </td>
+                                        
+                                     </tr>
+                              
+                                </tbody>
+                              </table>
+                              
+                              <span class="add" [routerLink]="['/sign-up/']">
+                                <button type="button" class="btn btn-outline-primary">Ajouter un prof</button>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             
+          </div>
+      </section>
+  </div>
+  
+  
+              <footer>
+                 
+                  <div class="footer clearfix mb-0 text-muted">
+                      <div class="float-left">
+                          <p>2022 &copy; ESTYA UNIVERSITY</p>
+                      </div>
+                     
+                  </div>
+              </footer>
+          </div>
+      
+      <script src="assets/js/feather-icons/feather.min.js"></script>
+      <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+      <script src="assets/js/app.js"></script>
+      
+      <script src="assets/vendors/chartjs/Chart.min.js"></script>
+      <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+      <script src="assets/js/pages/dashboard.js"></script>
+  
+      <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+ 

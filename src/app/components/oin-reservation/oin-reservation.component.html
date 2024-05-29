@@ -1,0 +1,96 @@
+
+  <!-- No data message -->
+
+
+  <!-- Employee list -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard - Voler Admin Dashboard</title>
+  
+  </head>
+  <body>
+    
+   
+          <div id="main">
+              
+              
+  <div class="main-content container-fluid">
+    <input id="chercher" type="text" placeholder="Chercher.."/>
+      <section class="section">
+          
+         
+             
+             
+          
+          
+         
+          <div class="row mb-4">
+              <div class="col-md-12">
+                 
+                  <div class="">
+                
+                      <div class="card-body px-0 pb-0">
+                          <div class="table-responsive">
+                            <table class="table caption-top">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Civilité</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Prénom</th>
+                                    <th scope="col">Adresse</th>
+
+
+                                  </tr>
+                                </thead>
+                                <tbody >
+                                    <tr >
+                                        <td>{{ Reservation.dateheure_debut }}</td>
+                                         <td>{{ Reservation.dateheure_fin }}</td>
+                                         <td>{{ Reservation.utilisateur_id }}</td>
+                                         <td>{{ Reservation.salle_id }}</td>
+                                     
+                                        
+                                     </tr>
+                              
+                                </tbody>
+                              </table>
+                              
+                              <span class="add" [routerLink]="['/reservation-create/']">
+                                <button type="button" class="btn btn-info">Ajouter une reservation</button>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             
+          </div>
+      </section>
+  </div>
+  
+  
+              <footer>
+                 
+                  <div class="footer clearfix mb-0 text-muted">
+                      <div class="float-left">
+                          <p>2022 &copy; ESTYA UNIVERSITY</p>
+                      </div>
+                     
+                  </div>
+              </footer>
+          </div>
+      
+      <script src="assets/js/feather-icons/feather.min.js"></script>
+      <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+      <script src="assets/js/app.js"></script>
+      
+      <script src="assets/vendors/chartjs/Chart.min.js"></script>
+      <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+      <script src="assets/js/pages/dashboard.js"></script>
+  
+      <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+ 

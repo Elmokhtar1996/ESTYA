@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-salle">
+      <!-- form card register -->
+      <div class="card-body">
+        <form [formGroup]="salleForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="inputName">nom_salle</label>
+            <input class="form-control" type="text" formControlName="nom_salle" />
+            <!-- error -->
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputName"> ecran</label>
+            <input class="form-control" type="text" formControlName="ecran" />
+            <!-- error -->
+          </div>
+          <div class="form-group">
+            <label for="inputName">camera</label>
+            <input class="form-control" type="text" formControlName="camera" />
+            <!-- error -->
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputName"> chaise</label>
+            <input class="form-control" type="text" formControlName="chaise" />
+            <!-- error -->
+          </div>
+
+          <div class="form-group">
+            <label for="inputName"> table</label>
+            <input class="form-control" type="text" formControlName="table" />
+            <!-- error -->
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" type="submit">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- form card register -->
+  </div>

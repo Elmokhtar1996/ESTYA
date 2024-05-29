@@ -1,0 +1,151 @@
+
+  <!-- No data message -->
+
+
+  <!-- Employee list -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard - Voler Admin Dashboard</title>
+
+  
+  </head>
+  <body>
+    
+   
+          <div id="main">
+              
+              
+  <div class="main-content container-fluid">
+    
+<app-sidebar></app-sidebar>
+
+      <section class="section">             
+        <div class="row">
+          <div class="col">
+          <label for="inputName">dateheure_debut</label>
+          <input class="form-control" type="date" formControlName="dateheure_debut" id="date" />
+          </div>
+          <div class="col">
+          <label for="inputName"> dateheure_fin</label>
+          <input class="form-control" type="date" formControlName="dateheure_fin">
+          <!-- error -->
+          </div>
+        </div>
+
+
+        <div class="row">
+      
+          <div class="col">
+            <select formControlName="salle_id" class="form-control"   >
+              <option value="" disabled>Choose a salle</option>
+              <option *ngFor="let salle of Salle; let i = index " value="{{ salle._id  }}" > 
+                {{ salle.nom_salle  }}
+              </option>
+            </select>
+          </div>
+          <div class="col">
+            <input id="chercher"  type="text" id="myInput" placeholder="Chercher.."/>
+          <!-- error -->
+          </div>
+        </div>
+          <!-- error -->
+   
+
+          
+      
+        <div class="form-group">
+          <button type="button" class="btn btn-outline-success">chercher</button>
+        </div>
+         
+          <div class="row mb-4">
+              <div class="col-md-12">
+                 
+                  <div class="">
+                
+                      <div class="card-body px-0 pb-0">
+                          <div class="table-responsive">
+                            <table  class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">DH de depart</th>
+                                    <th scope="col">DH de fin</th>
+                                    <th scope="col">Utilisateur</th>
+                                    <th scope="col">Salle</th>
+
+
+                                  </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                    <tr *ngFor="let reservation of Reservation; let i = index"  >
+                                     
+                                       
+                                     
+                                        <td>{{ reservation.dateheure_debut }}</td>
+                                         <td>{{ reservation.dateheure_fin }}</td>
+                                         <ng-container *ngFor="let user of User; let i = index">
+                                         <td *ngIf="reservation.utilisateur_id == user._id ; else elseBlock">{{ user.nom }}  {{ user.prenom }}</td>
+                                        
+                                      </ng-container>
+                                      <ng-container *ngFor="let salle of Salle; let i = index">
+                                        <td *ngIf="reservation.salle_id == salle._id ; else elseBlock">{{ salle.nom_salle }}</td>
+                                       
+                                     </ng-container>
+                                  
+                                         
+                                         <td class="text-center edit-block">
+                                             <span class="edit" [routerLink]="['/reservation-edit/', reservation._id]">
+                                               <button type="button" class="btn btn-outline-success">Edit</button>
+                                             </span>
+                                             <span class="delete" (click)="removeReservation(reservation, i)">
+                                               <button type="button" class="btn btn-outline-danger">Delete</button>
+                                             </span>
+                                       
+                                            <span class="user" [routerLink]="['/user-profile/', reservation.utilisateur_id]">
+                                            <button type="button" class="btn btn-outline-primary">user</button>
+                                          </span>
+                                           </td>
+                                        
+                                     </tr>
+                              
+                                </tbody>
+                              </table>
+                              
+                              <span class="add" [routerLink]="['/reservation-create/']">
+                                <button type="button" class="btn btn-outline-primary">Ajouter une reservation</button>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             
+          </div>
+      </section>
+  </div>
+  
+  
+              <footer>
+                 
+                  <div class="footer clearfix mb-0 text-muted">
+                      <div class="float-left">
+                          <p>2022 &copy; ESTYA UNIVERSITY</p>
+                      </div>
+                     
+                  </div>
+              </footer>
+          </div>
+      
+      <script src="assets/js/feather-icons/feather.min.js"></script>
+      <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+      <script src="assets/js/app.js"></script>
+      
+      <script src="assets/vendors/chartjs/Chart.min.js"></script>
+      <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+      <script src="assets/js/pages/dashboard.js"></script>
+  
+      <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+ 

@@ -1,0 +1,110 @@
+>
+
+<!-- No data message -->
+
+
+<!-- Employee list -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Voler Admin Dashboard</title>
+
+</head>
+<body>
+  
+ 
+        <div id="main">
+            
+            
+          <div class="row">
+            <div class="col-md-6">  
+<div class="main-content container-fluid">
+  <app-sidebar></app-sidebar>
+  <input id="chercher" type="text" placeholder="Chercher.."/>
+  </div>
+            </div>
+    <section class="section">
+        
+       
+           
+           
+        
+        
+       
+        <div class="row mb-4">
+            <div class="col-md-12">
+               
+                <div class="">
+              
+                    <div class="card-body px-0 pb-0">
+                        <div class="table-responsive">
+                          <table class="table table-striped">
+                              <thead>
+                                <tr>
+  
+                                  <th scope="col">Name</th>
+                                  <th scope="col">ecran</th>
+                                  <th scope="col">camera</th>
+                                  <th scope="col">chaise</th>
+                                  <th scope="col">table</th>
+                                
+                                </tr>
+                              </thead>
+                              <tbody id="tbody">
+                                <tr *ngFor="let salle of Salle; let i = index">
+                                  <td>{{salle.nom_salle}}</td>
+                                  <td>{{salle.ecran}}</td>
+                                  <td>{{salle.camera}}</td>
+                                  <td>{{salle.chaise}}</td>
+                                  <td>{{salle.table}}</td>
+                                  <td class="text-center edit-block">
+                                    <span class="edit" [routerLink]="['/edit-salle/', salle._id]">
+                                      <button type="button" class="btn btn-outline-success">Edit</button>
+                                    </span>
+                                    <span class="delete" (click)="removeSalle(salle, i)">
+                                      <button type="button" class="btn btn-outline-danger">Delete</button>
+                                    </span>
+                                  </td>
+                                </tr>
+                            
+                              </tbody>
+                            </table>
+                            
+                            <span class="add" [routerLink]="['/create-salle/']">
+                              <button type="button" class="btn btn-outline-primary">Ajouter une salle</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+</div>
+
+
+            <footer>
+               
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-left">
+                        <p>2022 &copy; ESTYA UNIVERSITY</p>
+                    </div>
+                   
+                </div>
+            </footer>
+        </div>
+    
+    <script src="assets/js/feather-icons/feather.min.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

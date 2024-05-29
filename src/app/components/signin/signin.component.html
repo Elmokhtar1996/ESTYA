@@ -1,0 +1,36 @@
+<div class="container">
+  <form  [formGroup]="signinForm" (ngSubmit)="loginUser()">
+  <div class="row g-0 mt-5 mb-5 height-100">
+      <div class="col-md-6">
+     
+         
+                <img src="assets/images/estyalogin.jpg" class="responsive" alt="" srcset="" style="height: 600px;width: 600px;">
+   
+      </div>
+   
+      <div class="col-md-6" style="margin-top: 100PX;">
+          <div class="bg-white p-4 h-100">
+              <div class="p-3 d-flex justify-content-center flex-column align-items-center"> <span class="main-heading">Connectez vous</span>
+          
+                  <div class="form-data"> <label>E-mail</label> <input
+      input
+        type="email"
+       class="form-control w-100"
+        formControlName="email"
+        
+        required > </div>
+                  <div class="form-data"> <label>Mot de passe</label> <input  type="password"
+      
+        formControlName="mot_de_pass" class="form-control w-100"> </div>
+                  <div class="d-flex justify-content-between w-100 align-items-center">
+
+                  </div>
+                  <div class="signin-btn w-100 mt-2"> <button class="btn btn-danger btn-block">Connecter</button> </div>
+                
+              </div>
+          </div>
+      </div>
+ 
+  </div>
+  </form>
+</div>
